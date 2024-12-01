@@ -1,0 +1,428 @@
+body {
+  background: linear-gradient(
+ rgba(105,105,105,0.7)
+,rgba(112,112,112,0.7)
+,rgba(120,120,120,0.7)
+,rgba(128,128,128,0.7)
+,rgba(136,136,136,0.7)
+,rgba(144,144,144,0.7)
+,rgba(152,152,152,0.7)), 
+              url('nen1.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  animation: gradientAnimation 10s ease infinite;
+}
+
+/* Gradient Animation Keyframes */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+    /* Header chính */
+header {
+  position: relative; /* Đặt làm container để logo hoạt động trong phạm vi này */
+  text-align: center;
+  background: linear-gradient(rgba(168,168,168, 0.8), rgba(96,96,96, 2));/* Màu xanh nổi bật */
+  border-radius: 12px;
+  color: white;
+  padding: 1rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo */
+.logo {
+  position: absolute; /* Đặt vị trí tương đối so với phần tử cha (header) */
+  top: 5px; /* Cách cạnh trên của header 10px */
+  right: 15px; /* Cách cạnh phải của header 20px */
+  width: 75px; /* Độ rộng logo */
+  height: auto; /* Giữ tỉ lệ logo */
+  z-index: 10; /* Đảm bảo logo luôn ở trên các phần tử khác */
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.logo:hover {
+  transform: scale(1.05); /* Hiệu ứng phóng to khi hover */
+}
+
+/* Logo */
+.logo1 {
+  position: absolute; /* Đặt vị trí tương đối so với phần tử cha (header) */
+  top: 5px; /* Cách cạnh trên của header 10px */
+  left: 42.5px; /* Cách cạnh phải của header 20px */
+  width: 85px; /* Độ rộng logo */
+  height: 50px; /* Giữ tỉ lệ logo */
+  z-index: 10; /* Đảm bảo logo luôn ở trên các phần tử khác */
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  border-radius: 42.5%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.logo1:hover {
+  transform: scale(1.05); /* Hiệu ứng phóng to khi hover */
+}
+.tenshop {
+  position: absolute; /* Đặt vị trí tương đối so với phần tử cha (header) */
+  top: 40px; /* Cách cạnh trên của header 10px */
+  left: 10px; /* Cách cạnh phải của header 20px */
+  width: 150px; /* Độ rộng logo */
+  height: 25px; /* Giữ tỉ lệ logo */
+  z-index: 10; /* Đảm bảo logo luôn ở trên các phần tử khác */
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  font-family:  cursive;
+}
+
+.tenshop:hover {
+  transform: scale(1.05); /* Hiệu ứng phóng to khi hover */
+}
+
+/* Header Text */
+header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.domino-text {
+  font-size: 3rem; /* Kích thước chữ */
+  font-weight: bold;
+  display: flex; /* Sắp xếp chữ theo hàng ngang */
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem; /* Khoảng cách giữa các chữ */
+}
+
+.domino-text span {
+  display: inline-block; /* Cho phép mỗi chữ là một khối riêng biệt */
+  position: relative; /* Để áp dụng gradient lên nền */
+  transform-origin: bottom; /* Điểm xoay nằm ở cạnh dưới */
+  animation: domino-fall 2s ease-in-out infinite; /* Hiệu ứng động */
+  animation-delay: calc(var(--i) * 0.2s); /* Tạo độ trễ cho từng chữ */
+  background: linear-gradient(45deg, 
+   #A9A9A9  
+,#DCDCDC
+,#A9A9A9
+,#778899 
+,#708090 
+,#2F4F4F 
+,#000000); /* Gradient màu cầu vồng */
+  -webkit-background-clip: text; /* Áp dụng gradient vào chữ */
+  color: transparent; /* Làm nền chữ trong suốt để gradient hiển thị */
+  z-index: 1; /* Đảm bảo chữ hiển thị trên nền gradient */
+}
+
+.domino-text span::before {
+  content: ''; /* Tạo pseudo-element để giữ gradient */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1; /* Đảm bảo nền gradient dưới chữ */
+}
+
+/* Keyframe tạo hiệu ứng domino */
+@keyframes domino-fall {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Thêm biến để tạo độ trễ cho từng chữ */
+.domino-text span:nth-child(1) { --i: 0; }
+.domino-text span:nth-child(2) { --i: 1; }
+.domino-text span:nth-child(3) { --i: 2; }
+.domino-text span:nth-child(4) { --i: 3; }
+.domino-text span:nth-child(5) { --i: 4; }
+.domino-text span:nth-child(6) { --i: 5; }
+.domino-text span:nth-child(7) { --i: 6; }
+
+/*bản quyền*/
+footer {
+  position: relative;
+  top:270px;
+  
+  text-align: center;
+  padding: 10px 0;
+  background-color: #333;
+  border-radius: 12px;
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* Hiệu ứng khi hover vào header */
+header:hover {
+  background-color: #666; /* Đổi màu xanh đậm hơn khi hover */
+}
+
+
+
+
+
+
+
+
+
+
+/* Toàn bộ trang */
+
+
+/* Slider */
+.slider {
+    top:20px;
+    bottom:20px;
+    position: relative;
+    width: 100%;
+    max-width: 1600px;
+    height: 900px;
+    overflow: hidden;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.slide {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.5s ease;
+}
+
+.slide img:hover {
+    transform: scale(1.05);
+   
+}
+
+/* Nút điều hướng */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: none;
+    border-radius: 30%;
+    font-size: 28px;
+    padding: 20px;
+    cursor: pointer;
+    z-index: 10;
+    user-select: none;
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.prev:hover, .next:hover {
+    background: rgba(84, 84, 84, 0.9);
+
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Hiệu ứng mượt */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
+
+
+/* Container cấu hình xe */
+.car-configuration {
+    position: absolute; /* Đặt vị trí tự do */
+    top: 910px; /* Khoảng cách từ cạnh trên của trang */
+    left: 50%; /* Canh giữa theo chiều ngang */
+    transform: translateX(-50%); /* Cân chỉnh để container nằm giữa */
+    width: 100%; /* Độ rộng logo */
+    max-width: 1558px;
+    height: 900px;
+    margin-top: 120px; /* Cách phần chi tiết xe */
+    
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: 200px; /* Chiều cao tối đa */
+    overflow-y: auto; /* Cho phép cuộn dọc nếu nội dung vượt quá chiều cao */
+    overflow-x: hidden; /* Ẩn cuộn ngang */
+    background: linear-gradient(45deg, 
+   #A9A9A9  
+,#DCDCDC
+,#A9A9A9
+,#778899 
+,#708090 
+,#2F4F4F 
+,#000000); /* Gradient màu cầu vồng */
+}
+
+/* Thanh cuộn đẹp */
+.car-configuration::-webkit-scrollbar {
+    width: 8px; /* Độ rộng của thanh cuộn */
+}
+
+.car-configuration::-webkit-scrollbar-thumb {
+    background: #007BFF; /* Màu của thanh cuộn */
+    border-radius: 12px; /* Bo góc */
+}
+
+.car-configuration::-webkit-scrollbar-thumb:hover {
+    background: #0056b3; /* Màu khi hover vào thanh cuộn */
+}
+
+.car-configuration::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Nền phía sau thanh cuộn */
+}
+
+.container {
+
+    display: grid;
+    grid-template-areas:
+        "details"
+        "configuration";
+    grid-gap: 20px; /* Khoảng cách giữa các phần */
+}
+
+.car-details {
+    grid-area: details;
+}
+
+.car-configuration {
+    grid-area: configuration;
+    padding: 20px;
+   
+    border-radius: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+  
+
+
+
+
+
+
+/* Wrapper tổng */
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Container chính */
+.container {
+    flex: 1; /* Chiếm không gian chính */
+    padding: 20px;
+}
+
+/* Chi tiết xe */
+.car-details {
+    display: flex;
+    flex-wrap: wrap; /* Để nội dung tự động xuống dòng trên màn hình nhỏ */
+    gap: 20px;
+}
+
+.car-image img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+
+   
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 24px; /* Thu nhỏ tiêu đề */
+    }
+
+    .car-details {
+        flex-direction: column; /* Hiển thị theo chiều dọc */
+    }
+
+    .car-image img {
+        max-width: 100%; /* Ảnh tự động co dãn */
+    }
+
+    .car-info {
+        font-size: 14px; /* Thu nhỏ chữ */
+    }
+
+    .car-configuration {
+        padding: 10px;
+        max-height: 150px; /* Giảm chiều cao tối đa */
+    }
+
+    footer {
+        font-size: 12px; /* Thu nhỏ chữ trong footer */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 18px; /* Thu nhỏ hơn nữa trên màn hình rất nhỏ */
+    }
+
+    .car-configuration {
+        max-height: 120px; /* Giảm thêm chiều cao */
+        font-size: 12px; /* Thu nhỏ nội dung */
+    }
+
+    footer {
+        padding: 5px 0; /* Giảm padding cho footer */
+    }
+}
